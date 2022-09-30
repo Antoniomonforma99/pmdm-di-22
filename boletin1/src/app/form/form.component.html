@@ -1,0 +1,12 @@
+<div class="login-page">
+    <h3>Ejercicio 1</h3>
+    <div class="form">
+      <form class="login-form">
+        <input type="text" class="form-control" placeholder="username" id="username"/>
+
+        <input id="showHideButton" [type]="isShown ? 'text' : 'password'" class="form-control" placeholder="password" id="password"/>
+        <input type="button" (click)="alterPassword()" value="Show/Hide password">
+
+      </form>
+    </div>
+</div>
