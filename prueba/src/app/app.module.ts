@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialImportsModule } from './angular-material-imports/material-imports/material-imports.module';
 import { TableComponent } from './components/table/table.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { ProfesorListComponent } from './components/profesor-list/profesor-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    SliderComponent
+    SliderComponent,
+    ProfesorListComponent,
   ],
   imports: [
     BrowserModule,
