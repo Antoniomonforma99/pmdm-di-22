@@ -12,15 +12,7 @@
     <button (click)="sort()">Ordenar</button>
     <div mat-subheader>Profesores</div>
     <mat-list-item *ngFor="let profesor of profesoresList">
-      
-    <div *ngIf="profesor.sexo=='Hombre'; else elseBlock">
-        <span class="material-symbols-outlined"> male </span>
-    </div>
-    <ng-template #elseBlock>
-        <span class="material-symbols-outlined">
-            female
-        </span>
-    </ng-template>
+    <mat-icon class="material-symbols-outlined">{{profesor.sexo == 'Hombre'? 'male' : 'female'}}</mat-icon> 
 
       <div mat-line>{{profesor.name}}, {{profesor.surname}}</div>
       <div mat-line> {{profesor.asignatura}} </div>
