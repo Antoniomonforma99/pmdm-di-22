@@ -13,6 +13,11 @@
     <div mat-subheader>Profesores</div>
     <mat-list-item *ngFor="let profesor of profesoresList">
       
+
+/*
+No usar ngIf y repasar
+*/
+    
     <div *ngIf="profesor.sexo=='Hombre'; else elseBlock">
         <span class="material-symbols-outlined"> male </span>
     </div>
