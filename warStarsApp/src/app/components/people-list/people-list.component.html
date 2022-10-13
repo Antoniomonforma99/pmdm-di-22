@@ -1,18 +1,23 @@
 <app-navbar></app-navbar>
 
 <ul>
-    <li *ngFor="let film of filmList">
+
+  <div>
+    <span *ngFor="let in of counter() ;let i = index"><button (click)="getPeoplePage(i+1)">{{i+1}}</button>&nbsp;</span>
+  </div>
+
+    <li *ngFor="let people of peopleList">
         <mat-card>
             <img
               mat-card-image
               src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-              [alt]="film.title"
+              [alt]="people.name"
             />
           
             <mat-card-content>
               <p>
-                <strong> {{film.title}} </strong>
-                {{film.director}}, {{film.release_date}}
+                <strong> {{people.name}} </strong>
+                {{people.name}}, {{people.birth_year}}
               </p>
             </mat-card-content>
             <mat-card-actions align="end">
@@ -23,4 +28,3 @@
           
     </li>
   </ul>
-  
