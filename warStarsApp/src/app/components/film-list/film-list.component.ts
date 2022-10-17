@@ -20,4 +20,8 @@ export class FilmListComponent implements OnInit {
   
   }
 
+  getPhotoUrl(film: Film) {
+    let id = film.
+  }
+
 }
