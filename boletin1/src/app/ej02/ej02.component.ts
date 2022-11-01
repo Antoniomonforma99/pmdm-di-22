@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ej02.component.css']
 })
 export class Ej02Component implements OnInit {
-  panelOpenState = false;
+  panelOpenState: false = false;
+
+
 
 
   constructor() { }

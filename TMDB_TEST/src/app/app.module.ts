@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialImportsModule } from './modules/material-imports.module';
@@ -11,14 +11,15 @@ import { ListActorsComponent } from './components/list-actors/list-actors.compon
 @NgModule({
   declarations: [
     AppComponent,
-    ListActorsComponent
+    ListActorsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialImportsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
