@@ -1,4 +1,3 @@
-
 export interface ActorResponse {
     page: number
     results: Actor[]

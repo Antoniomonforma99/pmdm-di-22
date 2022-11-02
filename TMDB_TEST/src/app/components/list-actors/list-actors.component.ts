@@ -5,6 +5,7 @@ import { Actor } from 'src/app/interfaces/actor-list';
 import { ActorDetailService } from 'src/app/services/actor-detail.service';
 import { ListActorsService } from 'src/app/services/list-actors.service';
 import { environment } from 'src/environments/environment';
+import { ActorDetailDialogComponent } from '../actor-detail-dialog/actor-detail-dialog.component';
 
 
 
@@ -18,33 +19,23 @@ export class ListActorsComponent implements OnInit {
 
 
   actorList: Actor[] = [];
-  actor: Actor | undefined;
-  actorId : number | undefined;
 
-  constructor(private actorService: ListActorsService, 
+  constructor(private actorService: ListActorsService,
     private actorDetailService: ActorDetailService, 
-    public dialog: MatDialog,
-    private ruta: ActivatedRoute) { }
+    public dialog: MatDialog) { }
   
 
-  getActor(){
-    this.actorId = +this.ruta.snapshot.paramMap.get('person_id')!;
-    this.actorDetailService.getById(this.actorId).subscribe(res => {
-      this.actor = res.result;
-    })
-    
 
-  }
+  openDialog(actor: Actor): void {
 
-  openDialog(): void {
-    let actor  = this.getActor();
-    let dialogRef = this.dialog.open(ActorDetailDialog,{
+    this.dialog.open(ActorDetailDialogComponent,{
       width: '300px',
       height: '600px',
       data : { actor : actor
     }
     });
-    console.log(actor);
+
+
   }
 
   ngOnInit(): void {
@@ -63,20 +54,4 @@ export class ListActorsComponent implements OnInit {
 
 }
 
-@Component({
-  selector: 'actor-detail-dialog',
-  templateUrl: 'actor-detail-dialog.html'
-})
-export class ActorDetailDialog {
 
-  actor: Actor | undefined;
-
-  constructor(
-    public dialogRef: MatDialogRef<ActorDetailDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: Actor,
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-}

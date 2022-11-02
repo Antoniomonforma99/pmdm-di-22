@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ActorDetailResponse } from '../interfaces/actor-detail';
-import { ActorResponse } from '../interfaces/actor-list';
+
 
 @Injectable({
   providedIn: 'root'

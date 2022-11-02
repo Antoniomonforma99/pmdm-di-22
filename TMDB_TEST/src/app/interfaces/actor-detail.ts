@@ -1,8 +1,5 @@
-import { Actor } from "./actor-list"
 
-export interface ActorDetailResponse {
-    result: Actor
-    
+export interface ActorDetailResponse {    
     birthday: string
     known_for_department: string
     deathday: any
